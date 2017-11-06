@@ -6,4 +6,4 @@ python:
 - '3.6'
 - pypy
 - pypy3
-script: py.test --pep8
+script: py.test --pylint --doctest-modules --ignore=setup.py
