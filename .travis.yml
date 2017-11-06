@@ -6,4 +6,5 @@ python:
 - '3.6'
 - pypy
 - pypy3
+pre_install: pip install --upgrade setuptools #Needed for cryptography on Python3.3
 script: py.test --pylint --doctest-modules --ignore=setup.py
