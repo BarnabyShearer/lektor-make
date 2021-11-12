@@ -1,5 +1,5 @@
 """
-Simple Lektor build plugin to run `make lektor` when watched files change
+Simple Lektor build plugin to run `make lektor` when watched files change.
 
 >>> import subprocess
 >>> def wait():
@@ -17,14 +17,19 @@ True
 """
 
 import subprocess
-from lektor.pluginsystem import Plugin
+from typing import Any
 
-class MakePlugin(Plugin):
-    """Plugin"""
-    name = 'make'
-    description = 'Run `make lektor` for custom build systems.'
-    cmd = ['make', 'lektor']
+from lektor.pluginsystem import Plugin  # type: ignore
+
+
+class MakePlugin(Plugin):  # type: ignore
+    """Plugin."""
+
+    name = "make"
+    description = "Run `make lektor` for custom build systems."
+    cmd = ["make", "lektor"]
 
     def on_before_build_all(self, builder, **extra):
-        """Even hook triggered before the other Lektor build steps"""
+        # type: (Any, **Any) -> None
+        """Even hook triggered before the other Lektor build steps."""
         subprocess.Popen(self.cmd).wait()
