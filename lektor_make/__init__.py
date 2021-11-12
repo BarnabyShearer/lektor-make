@@ -1,20 +1,4 @@
-"""
-Simple Lektor build plugin to run `make lektor` when watched files change.
-
->>> import subprocess
->>> def wait():
-...     wait.called = True
->>> def mock(cmd):
-...     assert cmd == ['make', 'lektor']
-...     return mock
->>> mock.wait = wait
->>> setattr(subprocess, 'Popen', mock)
->>> import lektor_make
->>> plugin = lektor_make.MakePlugin(lambda: None, None)
->>> plugin.on_before_build_all(lambda: None)
->>> mock.wait.called
-True
-"""
+"""Simple Lektor build plugin to run `make lektor` when watched files change."""
 
 import subprocess
 from typing import Any
