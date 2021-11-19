@@ -14,5 +14,5 @@ Install
 
 ::
 
-    pip install lektor-make
+    python3 -m pip install lektor-make
 
